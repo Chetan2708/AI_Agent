@@ -16,9 +16,14 @@ def create_folder(input_value):
 def write_code_to_file(input):
     path = input.get("path")
     content = input.get("content")
-    with open(path, "w") as f:
-        f.write(content)
-    return f"File written: {path}"
+    
+    try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w") as f:
+            f.write(content)
+        return f"✅ File written: {os.path.abspath(path)}"
+    except Exception as e:
+        return f"❌ Failed to write to {path}: {e}"
 
 def append_to_file(input):
     path = input.get("path")
