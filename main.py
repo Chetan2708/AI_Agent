@@ -68,11 +68,10 @@ while True:
             print("👉", parsed.get("content"))
             user_reply = input("> ")
             messages.append({ "role": "user", "content": user_reply })
-            
-        elif step == "output":
-            print("🤖", parsed.get("content"))
+        elif step == "complete":
+            print("✅", parsed.get("content"))
             done = True
-
+            break  
 
         # Fallback: If step is a tool name, treat as action
         elif step in available_tools:

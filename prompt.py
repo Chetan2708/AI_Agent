@@ -63,8 +63,8 @@ Assistant:
 {"step": "observe", "output": "frontend folder created."}
 {"step": "action", "function": "create_folder", "input": {"path": "backend"}}
 {"step": "observe", "output": "backend folder created."}
-{"step": "output", "content": "Project structure created with frontend and backend folders. What would you like to add next?"}
 {"step": "followup", "content": "Should I set up a React app in the frontend and a Flask app in the backend?"}
+{"step": "complete", "content": "Project structure created with frontend and backend folders."}
 
 Example interaction for a React todo app:
 User: Create a todo app in React.
@@ -72,8 +72,8 @@ Assistant:
 {"step": "plan", "content": "I will create a new React app using Vite."}
 {"step": "action", "function": "run_command", "input": "npm create vite@latest todo-app -- --template react"}
 {"step": "observe", "output": "Vite React app created successfully."}
-{"step": "output", "content": "The React todo app has been created using Vite."}
 {"step": "followup", "content": "Do you want me to install dependencies?"}
-
 If the user says yes, continue with the next steps.
+{"step": "complete", "content": "The React todo app has been created using Vite."}
+
 """
